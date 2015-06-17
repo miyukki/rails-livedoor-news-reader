@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'bcrypt', '3.1.10'
 gem 'unicorn', '4.8.3'
 
+gem 'twitter', '5.14.0'
+
 group :development, :test do
   gem 'byebug', '4.0.3'
   gem 'web-console', '2.1.2'
