@@ -21,8 +21,16 @@ class Article < ActiveRecord::Base
     article_stats = ArticleTweet.where.not(article: self).where(user_id: user_ids)
       .group(:article_id).order('count_user_id desc').count('user_id')
 
-    return [] if article_stats.blank?
+    articles = Article.recent.where(id: article_stats.keys.first(num))
 
-    Article.recent.where(id: article_stats.keys.first(num))
+    if articles.size < num
+      articles + category_related_articles(num - articles.size)
+    else
+      articles
+    end
+  end
+
+  def category_related_articles(num)
+    Article.recent.where.not(id: self.id).where(category: self.category).limit(num)
   end
 end
