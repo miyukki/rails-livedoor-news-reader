@@ -13,6 +13,7 @@ gem 'bcrypt', '3.1.10'
 gem 'unicorn', '4.8.3'
 
 gem 'twitter', '5.14.0'
+gem 'simple-rss'
 
 group :development, :test do
   gem 'byebug', '4.0.3'

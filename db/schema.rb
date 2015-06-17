@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617123058) do
+ActiveRecord::Schema.define(version: 20150617151716) do
 
   create_table "article_tweets", force: :cascade do |t|
     t.integer  "tweet_id",   limit: 8
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20150617123058) do
     t.string   "thumbnail_url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "category_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "rss_url"
   end
 
 end
