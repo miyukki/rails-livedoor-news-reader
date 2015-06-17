@@ -45,6 +45,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (4.2.3)
+      sass (~> 3.4)
+      thor
     buftok (0.2.0)
     builder (3.2.2)
     bullet (4.14.7)
@@ -131,6 +134,9 @@ GEM
     minitest (5.7.0)
     multipart-post (2.0.0)
     naught (1.0.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -262,6 +268,7 @@ DEPENDENCIES
   bcrypt (= 3.1.10)
   better_errors (= 2.1.1)
   binding_of_caller (= 0.7.2)
+  bourbon
   bullet
   byebug (= 4.0.3)
   capistrano (= 3.4.0)
@@ -275,6 +282,7 @@ DEPENDENCIES
   jquery-rails
   json_expressions (= 0.8.3)
   letter_opener (= 1.3.0)
+  neat
   pry-doc
   pry-rails
   pry-remote

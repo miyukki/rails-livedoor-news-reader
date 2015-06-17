@@ -8,6 +8,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'turbolinks'
 gem 'jquery-rails'
+gem 'bourbon'
+gem 'neat'
 
 gem 'bcrypt', '3.1.10'
 gem 'unicorn', '4.8.3'

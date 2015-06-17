@@ -1,0 +1,4 @@
+= @category.name
+- @category.articles.recent.first(30).each do |article|
+  .article
+    = link_to article.title, article_path(article)
