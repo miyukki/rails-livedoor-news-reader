@@ -1,5 +1,5 @@
 module TwitterClient
-  TWITTER_CONFIG = YAML.load(File.open(Rails.root.join('config', 'twitter.yml')))
+  TWITTER_CONFIG = YAML.load(File.open(Rails.root.join('config', 'twitter.yml')))
 
   def twitter_client
     @twitter_client ||=
