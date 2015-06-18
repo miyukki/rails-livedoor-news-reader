@@ -14,7 +14,8 @@
 %h2
   %i.fa.fa-search
   関連する記事
-- @article.related_articles(3).each do |article|
-  = link_to article_path(article) do
-    .article
-      .link= article.title
+- cache @article, expires_in: 10.minutes do
+  - @article.related_articles(3).each do |article|
+    = link_to article_path(article) do
+      .article
+        .link= article.title
