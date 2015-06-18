@@ -9,6 +9,10 @@ class Article < ActiveRecord::Base
 
   scope :recent, -> { order('created_at DESC') }
 
+  def self.refresh_tweets!
+    Article.recent.limit(150).each(&:load_tweets!)
+  end
+
   def load_tweets!
     results = twitter_client.search(self.url, count: 100, result_type: 'recent')
     results.each do |status|

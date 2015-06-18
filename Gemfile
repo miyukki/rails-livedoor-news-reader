@@ -17,6 +17,7 @@ gem 'unicorn', '4.8.3'
 gem 'twitter', '5.14.0'
 gem 'simple-rss'
 gem 'opengraph_parser'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', '4.0.3'

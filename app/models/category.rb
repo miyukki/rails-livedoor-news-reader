@@ -3,6 +3,10 @@ require 'rss'
 class Category < ActiveRecord::Base
   has_many :articles
 
+  def self.refresh_articles!
+    Category.all.each(&:load_articles!)
+  end
+
   def load_articles!
     rss = RSS::Parser.parse(open(self.rss_url))
     rss.items.each do |item|
