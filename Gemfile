@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jquery-rails'
 gem 'bourbon'
 gem 'neat'
+gem 'sprockets', '~> 3.2'
+gem 'font-awesome-sass', '~> 4.3.0'
 
 gem 'bcrypt', '3.1.10'
 gem 'unicorn', '4.8.3'

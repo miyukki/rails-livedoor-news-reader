@@ -11,7 +11,9 @@
 .lead_button
   = link_to 'この記事を読む', @article.url
 
-%h2 関連する記事
+%h2
+  %i.fa.fa-search
+  関連する記事
 - @article.related_articles(3).each do |article|
   = link_to article_path(article) do
     .article

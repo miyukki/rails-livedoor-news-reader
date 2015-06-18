@@ -8,6 +8,9 @@
     = csrf_meta_tags
     %meta{ name: 'viewport', content: 'width=device-width; initial-scale=1.0; maximum-scale=1.0, user-scalable=0;' }
   %body
-    %h1.title= title
+    %h1.title
+      = link_to root_path do
+        %i.fa.fa-newspaper-o
+        = title
     = yield
     .powered_by= t('powered_by')

@@ -6,6 +6,10 @@
 @import "neat";
 @import "base/base";
 
+// Font Awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 $default_margin: 8px;
 $default_border_color: silver;
 
@@ -16,6 +20,10 @@ h1, h2,
   margin: 0;
   padding: $default_margin;
   border-bottom: 1px solid $default_border_color;
+}
+
+h1.title a {
+  color: #333;
 }
 
 .powered_by {
