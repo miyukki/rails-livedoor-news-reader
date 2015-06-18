@@ -23,7 +23,7 @@ class Article < ActiveRecord::Base
   end
 
   def related_articles(num)
-    user_ids = tweets.map(&:user_id)
+    user_ids = self.tweets.pluck(:user_id)
     article_stats = ArticleTweet.where.not(article: self).where(user_id: user_ids)
       .group(:article_id).order('count_user_id desc').count('user_id')
 
