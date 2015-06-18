@@ -9,11 +9,13 @@ class Article < ActiveRecord::Base
 
   scope :recent, -> { order('created_at DESC') }
 
-  def load_tweets
+  def load_tweets!
     results = twitter_client.search(self.url, count: 100, result_type: 'recent')
     results.each do |status|
       ArticleTweet.create(article: self, tweet_id: status.id, user_id: status.user.id, posted_at: status.created_at)
     end
+
+    self.touch
   end
 
   def related_articles(num)

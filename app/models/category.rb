@@ -3,7 +3,7 @@ require 'rss'
 class Category < ActiveRecord::Base
   has_many :articles
 
-  def load_articles
+  def load_articles!
     rss = RSS::Parser.parse(open(self.rss_url))
     rss.items.each do |item|
       next if Article.where(url: item.link).exists?
