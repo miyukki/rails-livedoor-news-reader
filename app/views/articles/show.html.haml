@@ -8,7 +8,7 @@
   .article
     .title= @article.title
 
-.summary= raw @article.description
+.summary= "#{@article.description}…"
 
 .lead_button
   = link_to 'このニュースを読む', @article.url
