@@ -1,3 +1,5 @@
+- content_for(:title) { @article.title }
+
 - if @article.thumbnail_url.present?
   .featured_article
     .thumbnail= image_tag @article.thumbnail_url

@@ -1,4 +1,6 @@
-%h2.category_name= @category.name
+- content_for(:title) { "#{@category.name}の記事一覧" }
+
+%h2.category_name= "#{@category.name}の記事一覧"
 - @articles.each_with_index do |article, index|
   - if index % 5 == 0 && article.thumbnail_url.present?
     = link_to article_path(article) do
