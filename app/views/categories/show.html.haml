@@ -1,5 +1,11 @@
 %h2.category_name= @category.name
-- @category.articles.recent.first(30).each do |article|
-  = link_to article_path(article) do
-    .article
-      .title= article.title
+- @articles.each_with_index do |article, index|
+  - if index % 5 == 0 && article.thumbnail_url.present?
+    = link_to article_path(article) do
+      .featured_article
+        .thumbnail= image_tag article.thumbnail_url
+        .title= article.title
+  - else
+    = link_to article_path(article) do
+      .article
+        .title= article.title

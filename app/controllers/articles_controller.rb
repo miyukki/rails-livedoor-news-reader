@@ -8,6 +8,6 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find_by(id: params[:id])
-    # TODO: Not Found
+    redirect_to root_path if @article.blank?
   end
 end
