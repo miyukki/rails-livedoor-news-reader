@@ -48,3 +48,7 @@ group :development do
   gem 'pry-stack_explorer'
   gem 'pry-remote'
 end
+
+group :production do
+  gem 'mysql2', '~> 0.3.18'
+end
