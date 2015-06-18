@@ -1,5 +1,18 @@
-.article
-  = @article.title
-  - @article.related_articles(3).each do |article|
+- if @article.thumbnail_url.present?
+  .featured_article
+    .thumbnail= image_tag @article.thumbnail_url
+    .title= @article.title
+- else
+  .article
+    .title= @article.title
+
+.summary= raw @article.description
+
+.lead_button
+  = link_to 'この記事を読む', @article.url
+
+%h2 関連する記事
+- @article.related_articles(3).each do |article|
+  = link_to article_path(article) do
     .article
-      = link_to article.title, article_path(article)
+      .link= article.title

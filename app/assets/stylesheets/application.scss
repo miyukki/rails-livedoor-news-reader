@@ -5,3 +5,63 @@
 @import "bourbon";
 @import "neat";
 @import "base/base";
+
+$default_margin: 8px;
+$default_border_color: silver;
+
+h1, h2,
+.article,
+.summary,
+.lead_button {
+  margin: 0;
+  padding: $default_margin;
+  border-bottom: 1px solid $default_border_color;
+}
+
+.powered_by {
+  margin: 0;
+  padding: $default_margin;
+}
+
+.featured_article {
+  position: relative;
+
+  .thumbnail {
+    max-height: 300px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .title {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-weight: bold;
+    padding: $default_margin;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.lead_button {
+  $_button_color: #477DCA;
+
+  a {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    color: $_button_color;
+    padding: 8px;
+    border-radius: 3px;
+    border: solid 1px $_button_color;
+
+    &:active {
+      color: white;
+      background-color: $_button_color;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 module ApplicationHelper
   def title
-    t('title')
+    content_for?(:title) ? content_for(:title) : t('title')
   end
 end
