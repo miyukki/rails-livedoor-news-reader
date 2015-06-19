@@ -2,6 +2,7 @@
 
 - if @article.thumbnail_url.present?
   .featured_article
+    .category= @article.category.name
     .thumbnail= image_tag @article.thumbnail_url
     .title= @article.title
 - else

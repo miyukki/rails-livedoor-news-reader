@@ -34,6 +34,15 @@ h1.title a {
 .featured_article {
   position: relative;
 
+  .category {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    padding: 2px $default_margin;
+    background-color: rgba(81, 184, 214, 0.8);
+  }
+
   .thumbnail {
     max-height: 300px;
     overflow: hidden;
@@ -46,6 +55,8 @@ h1.title a {
 
   .title {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
     color: white;
     font-weight: bold;
